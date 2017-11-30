@@ -1,0 +1,30 @@
+<div id="listback">
+	<div id="search">
+		<label for="search">Search:</label>
+		<input type="text" name="search" ngModel (ngModelChange)="filter($event)" id="searchbar">
+	</div>
+	<div id="listshow">
+		<div *ngIf="contactinfo" id="modal">
+			<div id="contactinfo">
+				<p class="info"><span class="label">Name: </span> {{contactinfo.first_name}}</p>
+				<p class="info"><span class="label">Email: </span> {{contactinfo.email}}</p>
+			</div>
+			<button id="close" (click)="contactinfo=null">Close</button>
+		</div>
+		<div *ngFor="let bike of display" class="panel">
+			<p class="block imagepanel">
+				<img [src]="bike.image" alt="bike">
+			</p>
+			<div class="block info1">
+				<h1>{{bike.title}}</h1>
+				<p>{{bike.description}}</p>
+			</div>
+			<div class="block info2">
+				<h1>{{bike.price | currency : USD : symbol: "1.0-0"}}</h1>
+				<p>{{bike.location}}</p>
+				<button *ngIf="bike._user==user_id" (click)="delete(bike._id)" class="bdelete">DELETE</button>
+				<button *ngIf="bike._user!=user_id" (click)="contact(bike._user)" class="contact">Contact</button>
+			</div>
+		</div>
+	</div>
+</div>

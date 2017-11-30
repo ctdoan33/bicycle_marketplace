@@ -1,0 +1,90 @@
+#modal{
+	border: 2pt solid black;
+	background-color: lightgray;
+	position: fixed;
+	display: inline-block;
+	width: 300px;
+	height: 80px;
+	left: 50%;
+	top: 50%; 
+	margin-left: -150px;
+	margin-top: -40px;
+}
+#contactinfo{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+	width: 200px;
+}
+.info{
+	font-weight: bold;
+}
+.label{
+	font-style: italic;
+}
+#close{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 30px;
+	width: 80px;
+	border: 2pt solid black;
+}
+#listback{
+	background-color: lightgray;
+	border-top: 2pt solid black;
+	padding: 10px 20px;
+}
+#search{
+	margin: 0px 0px 10px 25px;
+}
+#searchbar{
+	width: 600px;
+	border: 2pt solid black;
+}
+#listshow{
+	background-color: white;
+	border: 2pt solid black;
+	display: inline-block;
+	width: 725px;
+	height: 600px;
+	overflow-y: scroll;
+	padding: 0px 20px;
+}
+.panel{
+	border: 2pt solid black;
+	background-color: #e6e6e6;
+	display: inline-block;
+	margin: 5px 0px;
+}
+.imagepanel{
+	min-width: 240px;
+	min-height: 160px;
+	margin: 0px;
+}
+img{
+	max-width: 240px;
+	max-height: 160px;
+}
+.block{
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+}
+.info1{
+	width: 300px;
+}
+.info2{
+	width: 110px;
+	text-align: center;
+}
+.bdelete{
+	color: white;
+	background-color: red;
+	width: 100px;
+	border: 2pt solid black;
+}
+.contact{
+	background-color: yellow;
+	width: 100px;
+	border: 2pt solid black;
+}

@@ -1,0 +1,76 @@
+<div *ngIf="bike" id="special">
+	<h2 id="specialheader">Bike of the day!</h2>
+	<div class="panel">
+		<p class="block imagepanel">
+			<img [src]="bike.image" alt="bike">
+		</p>
+		<div class="block info1">
+			<h1>{{bike.title}}</h1>
+			<p>{{bike.description}}</p>
+		</div>
+		<div class="block info2">
+			<h1>{{bike.price | currency : USD : symbol: "1.0-0"}}</h1>
+			<p>{{bike.location}}</p>
+		</div>
+	</div>
+</div>
+<div>
+	<form (submit)="login()" #logForm="ngForm" class="logregform">
+		<p class="field">
+			<label class="bold">*Email:</label>
+			<input type="email" name="email" required pattern="[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+" [(ngModel)]="logUser.email" #logemail="ngModel">
+		</p>
+		<p *ngIf="logemail.invalid" class="error field">
+			<span *ngIf="logemail.errors.required&&logemail.dirty">Email is required.</span>
+			<span *ngIf="logemail.errors.pattern&&logemail.dirty">Email must be valid.</span>
+		</p>
+		<p class="field">
+			<label class="bold">*Password:</label>
+			<input type="password" name="password" required minlength="16" [(ngModel)]="logUser.password" #logpassword="ngModel">
+		</p>
+		<p *ngIf="logpassword.invalid" class="error field">
+			<span *ngIf="logpassword.errors.required&&logpassword.dirty">Password is required.</span>
+			<span *ngIf="logpassword.errors.minlength&&logpassword.dirty">Password must be at least 16 characters long.</span>
+		</p>
+		<p class="error field">
+			<span *ngIf="mismatch&&!restricted">Invalid Credentials</span>
+			<span *ngIf="restricted">Too many attempts. Please wait {{restricted}} minutes.</span>
+		</p>
+		<input type="submit" value="Login" [disabled]="logForm.invalid" id="login">
+	</form>
+	<form (submit)="register()" #regForm="ngForm" class="logregform">
+		<p class="field">
+			<label class="bold">*First Name:</label>
+			<input type="text" name="first_name" required [(ngModel)]="regUser.first_name" #first_name="ngModel">
+		</p>
+		<p *ngIf="first_name.invalid&&first_name.dirty" class="error field">First name is required.</p>
+		<p class="field">
+			<label class="bold">*Last Name:</label>
+			<input type="text" name="last_name" required [(ngModel)]="regUser.last_name" #last_name="ngModel">
+		</p>
+		<p *ngIf="last_name.invalid&&last_name.dirty" class="error field">Last name is required.</p>
+		<p class="field">
+			<label class="bold">*Email:</label>
+			<input type="email" name="email" required pattern="[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+" [(ngModel)]="regUser.email" #regemail="ngModel">
+		</p>
+		<p *ngIf="regemail.invalid||duplicate" class="error field">
+			<span *ngIf="regemail.errors?.required&&regemail.dirty">Email is required.</span>
+			<span *ngIf="regemail.errors?.pattern&&regemail.dirty">Email must be valid.</span>
+			<span *ngIf="duplicate"> Email already registered.</span>
+		</p>
+		<p class="field">
+			<label class="bold">*Password:</label>
+			<input type="password" name="password" required minlength="16" [(ngModel)]="regUser.password" #regpassword="ngModel">
+		</p>
+		<p *ngIf="regpassword.invalid" class="error field">
+			<span *ngIf="regpassword.errors.required&&regpassword.dirty">Password is required.</span>
+			<span *ngIf="regpassword.errors.minlength&&regpassword.dirty">Password must be at least 16 characters long.</span>
+		</p>
+		<p class="field">
+			<label class="bold">*Password Confirmation:</label>
+			<input type="password" name="password_confirmation" required [(ngModel)]="confirm" #password_confirm="ngModel">
+		</p>
+		<p *ngIf="regUser.password!=confirm&&password_confirm.dirty" class="error field">Password confirmation must match password.</p>
+		<input type="submit" value="Register" [disabled]="regForm.invalid||regUser.password!=confirm" id="register">
+	</form>
+</div>

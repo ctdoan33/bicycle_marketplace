@@ -1,0 +1,72 @@
+#special{
+	margin: 20px 40px;
+}
+#specialheader{
+	color: blue;
+	margin: 0px;
+}
+.panel{
+	border: 2pt solid black;
+	background-color: #e6e6e6;
+	display: inline-block;
+	margin: 5px 0px;
+}
+.imagepanel{
+	min-width: 240px;
+	min-height: 160px;
+}
+img{
+	max-width: 240px;
+	max-height: 160px;
+}
+.block{
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+}
+.info1{
+	width: 300px;
+}
+.info2{
+	width: 110px;
+	text-align: center;
+}
+form{
+	border: 2pt solid black;
+	display: inline-block;
+	vertical-align: top;
+}
+.field{
+	margin: 10px;
+}
+.bold{
+	font-weight: bold;
+}
+input{
+	border: 2pt solid black;
+}
+.error{
+	color: red;
+}
+.logregform{
+	margin: 10px 20px;
+	text-align: right;
+}
+#login{
+	width: 300px;
+	margin: 10px;
+	color: white;
+	background-color: green;
+}
+#login:disabled{
+	background: #dddddd;
+}
+#register{
+	width: 350px;
+	margin: 10px;
+	color: white;
+	background-color: blue;
+}
+#register:disabled{
+	background: #dddddd;
+}

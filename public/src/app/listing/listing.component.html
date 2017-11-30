@@ -1,0 +1,57 @@
+<div class="listing">
+	<h2>Create Listing</h2>
+	<form (ngSubmit)="create(createForm)" #createForm="ngForm" class="listingform">
+		<div class="block">
+			<label for="image" class="head">Image Upload</label>
+			<button *ngIf="!updateImage" type="button" (click)="updateImage=true" class="changebutton">Change</button>
+			<p class="imageupdate">
+				<input *ngIf="updateImage" type="text" name="image" required [(ngModel)]="bike.image" #image="ngModel">
+				<button *ngIf="updateImage" type="button" (click)="updateImage=false" id="newimage">Upload</button>
+				<img *ngIf="!updateImage" [src]="bike.image" alt="bike">
+			</p>
+		</div>
+		<div class="listinfo1 block">
+			<label for="title" class="head">Title</label>
+			<input type="text" name="title" required [(ngModel)]="bike.title" #title="ngModel" class="textinput">
+			<label for="description" class="head">Description</label>
+			<textarea name="description" required maxlength="200" [(ngModel)]="bike.description" #description="ngModel" class="areainput"></textarea>
+		</div>
+		<div class="listinfo2 block">
+			<label for="price">Price:</label>
+			<span class="textinput dollar">$<input type="number" name="price" required min="1" step="1" [(ngModel)]="bike.price" #price="ngModel" class="priceinput"></span>
+			<label for="location">Location:</label>
+			<input type="text" name="location" required [(ngModel)]="bike.location" #location="ngModel" class="textinput">
+			<input type="submit" value="CREATE" [disabled]="createForm.invalid" id="create">
+		</div>
+	</form>
+</div>
+<div class="listing">
+	<h2>Edit/Delete Listings</h2>
+	<div id="overwrite">
+		<form *ngFor="let bike of userBikes; let idx=index" (submit)="update(idx)" #bikeForm="ngForm" class="listingform">
+			<div class="block">
+				<label for="image" class="head">Image Upload</label>
+				<button *ngIf="!updateImages[idx]" type="button" (click)="updateImages[idx]=true" class="changebutton">Change</button>
+				<p class="imageupdate">
+					<input *ngIf="updateImages[idx]" type="text" name="image" required [(ngModel)]="bike.image" #image="ngModel">
+					<button *ngIf="updateImages[idx]" type="button" (click)="updateImages[idx]=false" id="newimage">Upload</button>
+					<img *ngIf="!updateImages[idx]" [src]="bike.image" alt="bike">
+				</p>
+			</div>
+			<div class="listinfo1 block">
+				<label for="title" class="head">Title</label>
+				<input type="text" name="title" required [(ngModel)]="bike.title" #title="ngModel" class="textinput">
+				<label for="description" class="head">Description</label>
+				<textarea name="description" required maxlength="200" [(ngModel)]="bike.description" #description="ngModel" class="areainput"></textarea>
+			</div>
+			<div class="listinfo2 block">
+				<label for="price">Price:</label>
+				<span class="textinput dollar">$<input type="number" name="price" required min="1" step="1" [(ngModel)]="bike.price" #price="ngModel" class="priceinput"></span>
+				<label for="location">Location:</label>
+				<input type="text" name="location" required [(ngModel)]="bike.location" #location="ngModel" class="textinput">
+				<input type="submit" value="UPDATE" [disabled]="bikeForm.invalid" class="update">
+				<button type="button" (click)="destroy(bike._id)" class="listdelete">DELETE</button>
+			</div>
+		</form>
+	</div>
+</div>

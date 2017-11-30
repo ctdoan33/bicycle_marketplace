@@ -1,0 +1,108 @@
+.listing{
+	margin: 0px 20px;
+	border: 2pt solid black;
+	background-color: lightgray;
+	margin-bottom: 5px;
+	width: 775px;
+}
+h2{
+	margin: 5px;
+}
+input{
+	border: 2pt solid black;
+}
+.listingform{
+	border: 2pt solid black;
+	display: inline-block;
+	background-color: white;
+	margin: 5px 20px;
+	padding: 5px;
+	min-height: 210px;
+	width: 700px;
+}
+.imageupdate{
+	min-width: 240px;
+	min-height: 160px;
+	margin: 10px 0px;
+}
+img{
+	max-width: 240px;
+	max-height: 160px;
+}
+#newimage{
+	border: 2pt solid black;
+	color: white;
+	background-color: green;
+}
+.block{
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+}
+.listinfo1{
+	width: 300px;
+}
+.listinfo2{
+	width: 110px;
+}
+#overwrite{
+	display: inline-block;
+	overflow-y: scroll;
+}
+.head{
+	font-weight: bold;
+	font-style: italic;
+}
+.textinput{
+	width: 100px;
+	display: block;
+	margin: 10px 0px;
+}
+.areainput{
+	border: 2pt solid black;
+	display: block;
+	margin: 10px 0px;
+	width: 275px;
+	height: 90px;
+	resize: none;
+}
+#create{
+	width: 106px;
+	height: 67px;
+	color: white;
+	background-color: green;
+}
+#create:disabled{
+	background: #dddddd;
+}
+.changebutton{
+	margin: 0px 10px;
+	background-color: yellow;
+	border: 2pt solid black;
+}
+.update{
+	width: 106px;
+	height: 26px;
+	color: white;
+	background-color: darkgreen;
+	margin: 4px 0px;
+}
+.update:disabled{
+	background: #dddddd;
+}
+.listdelete{
+	width: 106px;
+	height: 26px;
+	color: white;
+	background-color: red;
+	border: 2pt solid black;
+	margin: 4px 0px;
+}
+.dollar{
+	border: 2pt solid black;
+	height: 19px;
+}
+.priceinput{
+	border: none;
+	width: 90px;
+}
